@@ -30,7 +30,7 @@ app.layout = html.Div([
 def update_output(value):
     worksheet1.append_table(values=[value])
 
-    return 'You have entered: \n{}'.format(value)
+    return 'You have entered: {}'.format(value)
 
 # This is not used in WebDash
 # if __name__ == '__main__':
