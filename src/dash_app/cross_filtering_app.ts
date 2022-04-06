@@ -17,7 +17,7 @@ app.layout = html.Div([
     dcc.Dropdown(['New York City', 'Montal', 'San Francisco'], 'Montal', multi=True),
     dcc.Textarea(
         id='textarea-example',
-        value='Textarea content initialized\nwith multiple lines of text',
+        value="Textarea content initialized\nwith multiple lines of text",
         style={'width': '100%', 'height': 100},
     ),
     html.Div(id='textarea-example-output', style={'whiteSpace': 'pre-line'})
