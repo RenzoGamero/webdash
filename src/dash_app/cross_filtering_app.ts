@@ -3,6 +3,12 @@ window.dashApp = `
 from dash import Dash, dcc, html
 from dash.dependencies import Input, Output
 import pandas as pd
+
+
+import micropip
+micropip.install('pygsheets')
+
+
 import pygsheets
 gc = pygsheets.authorize(service_file='client_secrets.json')
 sh = gc.open_by_key('1tuKjiWVKWb4S_kA8aJYy3Bg1eOQDTHKb5-ZkkBSSCbI')
@@ -29,8 +35,9 @@ app.layout = html.Div([
 )
 def update_output(value):
     worksheet1.append_table(values=[value])
-
     return 'You have entered: {}'.format(value)
+
+
 
 # This is not used in WebDash
 # if __name__ == '__main__':
