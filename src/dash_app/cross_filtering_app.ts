@@ -13,8 +13,14 @@ import pyodide
 
 
 import micropip
-micropip.install('pygsheets')
-import pygsheets
+micropip.install('seaborn==0.9.0')
+
+import seaborn
+print(seaborn.version)
+
+#import micropip
+#micropip.install('pygsheets')
+#import pygsheets
 
 
 def set_data(data):
