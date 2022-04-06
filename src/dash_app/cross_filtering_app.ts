@@ -5,12 +5,13 @@ from dash.dependencies import Input, Output
 import pandas as pd
 
 
+
+
 import micropip
-micropip.install('PyDrive')
+await micropip.install('pygsheets')
+import pygsheets
 
 #import datasheets
-from pydrive.auth import GoogleAuth
-from pydrive.drive import GoogleDrive
 
 
 # This is not used in WebDash
