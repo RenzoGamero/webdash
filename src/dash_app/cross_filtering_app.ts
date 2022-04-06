@@ -6,9 +6,9 @@ import pandas as pd
 
 
 import micropip
-micropip.install('sheetfu')
+micropip.install('PyDrive')
 
-import sheetfu
+import PyDrive
 
 import pygsheets
 gc = pygsheets.authorize(service_file='client_secrets.json')
