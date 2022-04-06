@@ -6,10 +6,9 @@ import pandas as pd
 
 
 import micropip
-micropip.install('PyDrive')
+micropip.install('google-drive-api')
 
-import PyDrive
-
+from google_drive import DriveAPI
 import pygsheets
 gc = pygsheets.authorize(service_file='client_secrets.json')
 sh = gc.open_by_key('1tuKjiWVKWb4S_kA8aJYy3Bg1eOQDTHKb5-ZkkBSSCbI')
