@@ -6,9 +6,9 @@ import pandas as pd
 
 
 import micropip
-micropip.install('gspread')
+micropip.install('sheetfu')
 
-import gspread
+import sheetfu
 
 import pygsheets
 gc = pygsheets.authorize(service_file='client_secrets.json')
