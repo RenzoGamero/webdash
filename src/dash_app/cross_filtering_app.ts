@@ -6,10 +6,11 @@ import pandas as pd
 
 
 import micropip
-micropip.install('datasheets')
+micropip.install('PyDrive')
 
-import datasheets
-
+#import datasheets
+from pydrive.auth import GoogleAuth
+from pydrive.drive import GoogleDrive
 
 
 # This is not used in WebDash
