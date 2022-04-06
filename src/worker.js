@@ -13,7 +13,9 @@ async function loadPyodideAndPackages() {
     homedir: "/",
     indexURL: `${pyodideAddress}/`,
   });
-  await self.pyodide.loadPackage(["pandas", "numpy", "dash"], postConsoleMessage, postConsoleMessage);
+  await self.pyodide.loadPackage(["pandas", "numpy", "dash", 'micropip'], postConsoleMessage, postConsoleMessage);
+  await micropip.install('pygsheets')
+
 }
 
 let pyodideReadyPromise = loadPyodideAndPackages();
