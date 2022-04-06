@@ -12,9 +12,9 @@ import plotly.express as px
 import pyodide
 
 
-#import micropip
-#await micropip.install('pygsheets')
-#import pygsheets
+import micropip
+micropip.install('pygsheets')
+import pygsheets
 
 
 def set_data(data):
