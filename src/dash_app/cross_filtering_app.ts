@@ -12,6 +12,8 @@ import plotly.express as px
 import pyodide
 
 
+import micropip
+await micropip.install('pygsheets')
 import pygsheets
 
 
