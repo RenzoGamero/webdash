@@ -11,6 +11,7 @@ from dash import html
 import plotly.express as px
 import pyodide
 
+import sqlalchemy
 
 import micropip
 micropip.install('seaborn==0.9.0')
