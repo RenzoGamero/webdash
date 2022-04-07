@@ -13,19 +13,10 @@ import pyodide
 
 import sqlalchemy
 
-import subprocess
 
-from sqlalchemy.engine.create import create_engine
-heroku_app_name = "dbherokutest"
+url = 'postgresql://mmnikxtiszubfn:86500ca8f78fff21cf38b6313e3b453d7c152c624754bf38d77c2e27be7b4d23@ec2-34-231-63-30.compute-1.amazonaws.com:5432/dmmf9tainspli'
+engine =create_engine(url)
 
-raw_db_url = subprocess.run(
-    ["heroku", "config:get", "postgresql-graceful-94199", "--app", heroku_app_name],
-    capture_output=True  # capture_output arg is added in Python 3.7
-).stdout 
-
-db_url = raw_db_url.decode("ascii").strip()
-final_db_url = "postgresql+psycopg2://" + db_url.lstrip("postgres://")  # lstrip() is more suitable here than replace() function since we only want to replace postgres at the start!
-engine = create_engine(final_db_url)
 
 
 print('Engine creada')
