@@ -13,7 +13,7 @@ async function loadPyodideAndPackages() {
     homedir: "/",
     indexURL: `${pyodideAddress}/`,
   });
-  await self.pyodide.loadPackage(["pandas", "numpy", "dash", 'micropip','sqlalchemy','psycopg2'], postConsoleMessage, postConsoleMessage);
+  await self.pyodide.loadPackage(["pandas", "numpy", "dash", 'micropip','sqlalchemy'], postConsoleMessage, postConsoleMessage);
 }
 
 let pyodideReadyPromise = loadPyodideAndPackages();
