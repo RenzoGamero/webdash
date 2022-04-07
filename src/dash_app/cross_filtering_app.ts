@@ -13,7 +13,7 @@ import pyodide
 
 import sqlalchemy
 
-
+import subprocess
 
 def set_data(data):
     window.dataRetrieved = data
