@@ -15,6 +15,53 @@ import sqlalchemy
 
 import subprocess
 
+from sqlalchemy.engine.create import create_engine
+heroku_app_name = "dbherokutest"
+
+raw_db_url = subprocess.run(
+    ["heroku", "config:get", "postgresql-graceful-94199", "--app", heroku_app_name],
+    capture_output=True  # capture_output arg is added in Python 3.7
+).stdout 
+
+db_url = raw_db_url.decode("ascii").strip()
+final_db_url = "postgresql+psycopg2://" + db_url.lstrip("postgres://")  # lstrip() is more suitable here than replace() function since we only want to replace postgres at the start!
+engine = create_engine(final_db_url)
+
+
+print('Engine creada')
+import pandas as pd
+from sqlalchemy.types import Integer, DateTime
+from datetime import datetime
+now = datetime.now() # current date and time
+print('now= ',now)
+df=pd.DataFrame([now])
+
+df.to_sql(
+    "TestDBTime",  # table name
+    con=engine,
+    if_exists='append',
+    index=False,  # In order to avoid writing DataFrame index as a column
+
+)
+
+df = pd.read_sql_table(
+	"TestDBTime",  # table name
+	con=engine
+)
+
+
+print('leer tabla desde engine ')
+print(df.head())
+
+
+
+
+
+
+
+
+
+
 def set_data(data):
     window.dataRetrieved = data
 
