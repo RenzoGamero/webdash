@@ -14,15 +14,13 @@ import socket
 
 
 import micropip
-micropip.install('seaborn')
-import seaborn as sns
-sns.set_theme(style="darkgrid")
+micropip.install('cloudpickle')
 
-tips = sns.load_dataset("tips")
-g = sns.jointplot(x="total_bill", y="tip", data=tips,
-                  kind="reg", truncate=False,
-                  xlim=(0, 60), ylim=(0, 12),
-                  color="m", height=7)
+
+import cloudpickle
+squared = lambda x: x ** 2
+pickled_lambda = cloudpickle.dumps(squared)
+
 
 
 
