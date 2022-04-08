@@ -10,11 +10,11 @@ from dash import html
 #import dash_html_components as html
 import plotly.express as px
 import pyodide
+from sqlalchemy.dialects.postgresql import psycopg2
 
-import micropip
-micropip.install('psycopg2')
-
-import psycopg2
+#import micropip
+#micropip.install('psycopg2')
+#import psycopg2
 
 from sqlalchemy.engine.create import create_engine
 from datetime import datetime
