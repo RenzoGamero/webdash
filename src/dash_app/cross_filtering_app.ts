@@ -19,9 +19,8 @@ import cloudpickle
 squared = lambda x: x ** 2
 pickled_lambda = cloudpickle.dumps(squared)
 
-micropip.install('mysqlclient')
-import mysqlclient
-
+micropip.install('google-cloud-storage')
+from google.cloud import storage
 
 
 
