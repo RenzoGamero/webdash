@@ -11,7 +11,7 @@ from dash import html
 import plotly.express as px
 import pyodide
 #from sqlalchemy.dialects.postgresql import psycopg2
-#from sqlalchemy.engine.create import create_engine
+from sqlalchemy.engine.create import create_engine
 #from datetime import datetime
 
 from sqlalchemy.pool import NullPool
