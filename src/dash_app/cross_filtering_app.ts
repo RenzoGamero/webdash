@@ -10,24 +10,21 @@ from dash import html
 #import dash_html_components as html
 import plotly.express as px
 import pyodide
-from sqlalchemy.dialects.postgresql import psycopg2
-from sqlalchemy.engine.create import create_engine
-from datetime import datetime
+#from sqlalchemy.dialects.postgresql import psycopg2
+#from sqlalchemy.engine.create import create_engine
+#from datetime import datetime
 
-url = 'postgresql://mmnikxtiszubfn:86500ca8f78fff21cf38b6313e3b453d7c152c624754bf38d77c2e27be7b4d23@ec2-34-231-63-30.compute-1.amazonaws.com:5432/dmmf9tainspli'
-engine =create_engine(url)
+from sqlalchemy.pool import NullPool
+engine = create_engine(
+    'postgresql://mmnikxtiszubfn:86500ca8f78fff21cf38b6313e3b453d7c152c624754bf38d77c2e27be7b4d23@ec2-34-231-63-30.compute-1.amazonaws.com:5432/dmmf9tainspli',
+    pool=NullPool)
+
+#url = 'postgresql://mmnikxtiszubfn:86500ca8f78fff21cf38b6313e3b453d7c152c624754bf38d77c2e27be7b4d23@ec2-34-231-63-30.compute-1.amazonaws.com:5432/dmmf9tainspli'
+#engine =create_engine(url)
 
 print('Engine creada')
 now = datetime.now() 
 df=pd.DataFrame([now])
-
-df.to_sql(
-    "TestDBTime",  # table name
-    con=engine,
-    if_exists='append',
-    index=False,  # In order to avoid writing DataFrame index as a column
-
-)
 
 
 
