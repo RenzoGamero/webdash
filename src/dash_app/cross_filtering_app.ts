@@ -21,6 +21,11 @@ import cloudpickle
 squared = lambda x: x ** 2
 pickled_lambda = cloudpickle.dumps(squared)
 
+import micropip
+micropip.install('mysqlclient')
+
+import mysqlclient
+
 
 
 
