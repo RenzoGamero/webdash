@@ -14,7 +14,7 @@ import socket
 
 
 import micropip
-micropip.install('seaborn').then(lambda msg: print('Done. You can now import the module'))
+micropip.install('seaborn')
 import seaborn as sns
 sns.set_theme(style="darkgrid")
 
