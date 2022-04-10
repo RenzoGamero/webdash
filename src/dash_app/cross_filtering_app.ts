@@ -19,7 +19,7 @@ import cloudpickle
 squared = lambda x: x ** 2
 pickled_lambda = cloudpickle.dumps(squared)
 
-micropip.install('psycopg2-binary')
+micropip.install('psycopg2')
 import psycopg2
 
 from sqlalchemy.engine.create import create_engine
