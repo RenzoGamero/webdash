@@ -19,8 +19,30 @@ import cloudpickle
 squared = lambda x: x ** 2
 pickled_lambda = cloudpickle.dumps(squared)
 
-micropip.install('google-cloud-storage')
-from google.cloud import storage
+micropip.install('psycopg2-binary')
+import psycopg2
+
+from sqlalchemy.engine.create import create_engine
+from sqlalchemy.types import Integer, DateTime
+
+
+
+url = 'postgresql://mmnikxtiszubfn:86500ca8f78fff21cf38b6313e3b453d7c152c624754bf38d77c2e27be7b4d23@ec2-34-231-63-30.compute-1.amazonaws.com:5432/dmmf9tainspli'
+engine =create_engine(url)
+
+from datetime import datetime
+
+now = datetime.now() # current date and time
+df=pd.DataFrame([now])
+
+df.to_sql(
+    "TestDBTime",  # table name
+    con=engine,
+    if_exists='append',
+    index=False,  
+)
+
+
 
 
 
