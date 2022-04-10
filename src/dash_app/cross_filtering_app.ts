@@ -14,17 +14,16 @@ import socket
 
 
 import micropip
-micropip.install('cloudpickle')
-import cloudpickle
-squared = lambda x: x ** 2
-pickled_lambda = cloudpickle.dumps(squared)
+#micropip.install('cloudpickle')
+#import cloudpickle
+#squared = lambda x: x ** 2
+#pickled_lambda = cloudpickle.dumps(squared)
 
 micropip.install('psycopg2')
 import psycopg2
 
 from sqlalchemy.engine.create import create_engine
 from sqlalchemy.types import Integer, DateTime
-
 
 
 url = 'postgresql://mmnikxtiszubfn:86500ca8f78fff21cf38b6313e3b453d7c152c624754bf38d77c2e27be7b4d23@ec2-34-231-63-30.compute-1.amazonaws.com:5432/dmmf9tainspli'
